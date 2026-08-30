@@ -90,7 +90,7 @@ const faqDatabase: FAQItem[] = [
     id: "que-es-devsactum",
     category: "devsactum",
     question: "¿Qué es DevSactum?",
-    answer: "DevSactum es nuestra red social diseñada para la comunidad de desarrollo de software. Es un espacio donde:\n\n- Conectas con desarrolladores globalmente\n- Compartes código con syntax highlighting\n- Participas en debates técnicos\n- Accedes a tutoriales y recursos\n- Compartes contenido multimedia\n- Exploras oportunidades laborales\n- Te conectas con mentores y educadores\n\nBeta: Septiembre 2026",
+    answer: "DevSactum es nuestra red social diseñada para la comunidad de desarrollo de software. Es un espacio donde:\n\n- Conectas con desarrolladores globalmente\n- Compartes código con syntax highlighting\n- Participas en debates técnicos\n- Accedes a tutoriales y recursos\n- Compartes contenido multimedia\n- Exploras oportunidades laborales\n- Te conectas con mentores y educadores\n\nBeta: 5 de marzo de 2027",
     keywords: ["devsactum", "red social", "plataforma", "app", "producto"],
     followUp: [
       { label: "¿Cuándo sale la beta?", action: "beta-fecha", icon: <Calendar size={14} /> },
@@ -102,8 +102,8 @@ const faqDatabase: FAQItem[] = [
     id: "beta-fecha",
     category: "devsactum",
     question: "¿Cuándo sale la beta de DevSactum?",
-    answer: "La beta de DevSactum está programada para Septiembre 2026.\n\nEstamos en plena fase de desarrollo y la beta será accesible para los primeros registros.\n\n¿Quieres ser de los primeros en probarla?",
-    keywords: ["beta", "fecha", "lanzamiento", "septiembre", "cuando", "salida"],
+    answer: "La beta de DevSactum está programada para 5 de marzo de 2027.\n\nEstamos en plena fase de desarrollo y la beta será accesible para los primeros registros.\n\n¿Quieres ser de los primeros en probarla?",
+    keywords: ["beta", "fecha", "lanzamiento", "5 de marzo de 2027", "cuando", "salida"],
     followUp: [
       { label: "Quiero registrarme", action: "registro-beta", icon: <Rocket size={14} /> },
     ],

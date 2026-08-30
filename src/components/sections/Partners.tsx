@@ -23,46 +23,49 @@ export default function Partners() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 radial-glow opacity-10 pointer-events-none" />
+    <section className="relative py-16 border-y border-white/[0.04] overflow-hidden bg-white/[0.01]">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.015] to-transparent pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6" ref={ref}>
+      <div className="relative max-w-[1240px] mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="flex flex-col lg:flex-row items-center justify-between gap-6"
         >
-          <span className="text-xs font-medium text-muted/30 tracking-wider uppercase">
-            Construido con tecnologías de clase mundial
+          <span className="text-[11px] font-medium tracking-[0.14em] uppercase text-white/25 shrink-0">
+            Construido sobre tecnologías líderes
           </span>
+
+          {/* Static elegant row – Wispr-like, not marquee carnival */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2">
+            {partners.map((name) => (
+              <span
+                key={name}
+                className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.06] text-[12px] font-mono tracking-wide text-white/35 hover:text-white/65 hover:border-white/10 hover:bg-white/[0.06] transition-all duration-300 cursor-default"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
-        <div className="relative overflow-hidden group/carousel" aria-label="Tecnologías que utilizamos">
-          {/* Gradient masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050816] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050816] to-transparent z-10 pointer-events-none" />
-
-          {/* Scrolling logos — pauses on hover */}
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex gap-12 items-center group-hover/carousel:[animation-play-state:paused]"
-            aria-hidden="true"
-          >
-            {[...partners, ...partners].map((name, i) => (
-              <div
-                key={`${name}-${i}`}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl glass-light border border-white/5 shrink-0"
-              >
-                <div className="w-6 h-6 rounded bg-white/5 flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-muted/30">{name[0]}</span>
-                </div>
-                <span className="text-sm font-medium text-muted/30 whitespace-nowrap">{name}</span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Secondary proof – numbers row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mt-8 pt-6 border-t border-white/[0.04] flex flex-wrap items-center justify-center lg:justify-between gap-4 text-[12px] text-white/20"
+        >
+          <span className="inline-flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/60" />
+            Infraestructura lista para escalar
+          </span>
+          <span className="hidden sm:inline w-px h-3 bg-white/10" />
+          <span>Santiago, Chile · Remoto-first · LatAm → Global</span>
+          <span className="hidden sm:inline w-px h-3 bg-white/10" />
+          <span className="text-white/30">Beta 5 de marzo de 2027</span>
+        </motion.div>
       </div>
     </section>
   );

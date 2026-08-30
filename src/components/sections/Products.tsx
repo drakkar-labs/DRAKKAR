@@ -141,7 +141,7 @@ export default function Products() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="products" className="relative py-32 overflow-hidden">
+    <section id="products" className="relative py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 radial-glow opacity-20 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6" ref={ref}>
@@ -235,7 +235,7 @@ export default function Products() {
               </p>
               <div className="flex items-center gap-2 mb-6">
                 <span className="px-2 py-0.5 text-[10px] font-mono rounded-full bg-electric-blue/10 text-electric-blue border border-electric-blue/20">
-                  Beta · Sept 2026
+                  Beta · 5 de marzo de 2027
                 </span>
               </div>
               <a

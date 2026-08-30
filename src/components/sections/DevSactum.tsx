@@ -76,7 +76,7 @@ export default function DevSactum() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="devsactum" className="relative py-32 overflow-hidden">
+    <section id="devsactum" className="relative py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#050816] via-deep-purple/[0.03] to-[#050816] pointer-events-none" />
       <div className="absolute inset-0 radial-glow opacity-30 pointer-events-none" />
 
@@ -121,7 +121,7 @@ export default function DevSactum() {
           >
             <Calendar size={14} className="text-electric-blue" />
             <span className="text-sm font-medium text-electric-blue">
-              Beta — Septiembre 2026
+              Beta — 5 de marzo de 2027
             </span>
           </motion.div>
         </div>
@@ -281,7 +281,7 @@ export default function DevSactum() {
             />
           </a>
           <p className="mt-4 text-xs text-muted/30">
-            Regístrate para acceder anticipadamente a DevSactum Beta en Septiembre 2026
+            Regístrate para acceder anticipadamente a DevSactum Beta en 5 de marzo de 2027
           </p>
         </motion.div>
       </div>

@@ -75,7 +75,7 @@ export default function Technology() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="technology" className="relative py-32 overflow-hidden">
+    <section id="technology" className="relative py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-50 pointer-events-none" />
       <div className="absolute inset-0 radial-glow opacity-20 pointer-events-none" />
 

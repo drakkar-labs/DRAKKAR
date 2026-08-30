@@ -48,7 +48,7 @@ const entries = [
   },
   {
     version: "1.0.0-beta",
-    date: "Septiembre 2026",
+    date: "5 de marzo de 2027",
     title: "DevSactum Beta",
     type: "major",
     changes: [

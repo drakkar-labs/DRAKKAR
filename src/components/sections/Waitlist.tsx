@@ -250,7 +250,7 @@ export default function Waitlist({ standalone = false }: WaitlistProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted/50 max-w-xl mx-auto mb-8"
           >
-            Acceso anticipado a la beta de Septiembre 2026. Los miembros de la
+            Acceso anticipado a la beta de 5 de marzo de 2027. Los miembros de la
             waitlist obtienen prioridad y acceso exclusivo a features premium.
           </motion.p>
 

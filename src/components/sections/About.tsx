@@ -91,7 +91,7 @@ export default function About() {
   const metricsInView = useInView(metricsRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 radial-glow opacity-20 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
@@ -257,7 +257,7 @@ export default function About() {
                 <div>
                   <div className="text-electric-blue font-mono text-sm mb-2">2026</div>
                   <h4 className="text-lg font-semibold mb-2">DevSactum — En Desarrollo</h4>
-                  <p className="text-sm text-muted/50">Nuestro primer producto: una red social para desarrolladores, programadores y la comunidad tech. Beta en Septiembre 2026.</p>
+                  <p className="text-sm text-muted/50">Nuestro primer producto: una red social para desarrolladores, programadores y la comunidad tech. Beta en 5 de marzo de 2027.</p>
                 </div>
               </motion.div>
               <motion.div

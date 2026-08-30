@@ -6,12 +6,10 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 const navLinks = [
-  { label: "DevSactum", href: "#devsactum" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Plataforma", href: "#products" },
-  { label: "Roadmap", href: "#roadmap" },
-  { label: "Blog", href: "#blog" },
-  { label: "Carreras", href: "#careers" },
+  { label: "Lab", href: "#lab" },
+  { label: "Proceso", href: "#process" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Stack", href: "#stack" },
   { label: "Contacto", href: "#contact" },
 ];
 
@@ -42,17 +40,19 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -16, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled ? "glass py-3" : "bg-transparent py-5"
+          "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
+          scrolled
+            ? "bg-[#050816]/80 backdrop-blur-2xl border-white/[0.06] py-3"
+            : "bg-transparent border-transparent py-4"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden ring-1 ring-white/10 group-hover:ring-gold/30 transition-all duration-300">
+        <div className="max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-6">
+          <a href="#" className="flex items-center gap-3 group shrink-0">
+            <div className="relative w-9 h-9 rounded-xl overflow-hidden ring-1 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
               <Image
                 src="/drakkar-logo.png"
                 alt="Dräkkar Labs"
@@ -61,30 +61,32 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <span className="text-lg font-semibold tracking-tight hidden sm:block">
-              Dräkkar<span className="text-gold">Labs</span>
+            <span className="text-[17px] font-semibold tracking-[-0.02em] hidden sm:block">
+              Dräkkar<span className="text-white/60 font-[500]">Labs</span>
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
+          <nav
+            className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-white/[0.04] border border-white/[0.06] backdrop-blur-xl"
+            aria-label="Navegación principal"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-sm text-muted/70 hover:text-white transition-colors duration-300 group"
+                className="px-4 py-1.5 rounded-full text-[13.5px] font-medium tracking-[-0.01em] text-white/55 hover:text-white hover:bg-white/[0.06] transition-all duration-200"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-gradient-to-r from-gold to-electric-blue group-hover:w-3/4 transition-all duration-300" />
               </a>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-medium rounded-lg bg-gradient-to-r from-gold/10 to-electric-blue/10 border border-gold/20 text-gold hover:border-gold/40 hover:bg-gold/10 transition-all duration-300"
+              className="px-5 py-2 rounded-full bg-white text-[#050816] text-[13.5px] font-semibold tracking-[-0.01em] hover:bg-white/90 transition-colors shadow-[0_2px_16px_rgba(255,255,255,0.12)]"
             >
-              Contáctanos
+              Hablemos
             </a>
           </div>
 
@@ -105,31 +107,46 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 glass flex flex-col items-center justify-center gap-6 lg:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-[#050816]/95 backdrop-blur-2xl flex flex-col lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Menú de navegación"
           >
-            {navLinks.map((link, i) => (
+            <div className="flex-1 flex flex-col items-center justify-center gap-2 px-6 py-20">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    hamburgerRef.current?.focus();
+                  }}
+                  className="w-full max-w-sm text-center py-4 rounded-2xl text-[22px] font-semibold tracking-[-0.02em] text-white/80 hover:text-white hover:bg-white/[0.04] border border-transparent hover:border-white/[0.06] transition-all"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
               <motion.a
-                key={link.href}
-                href={link.href}
-                initial={{ opacity: 0, y: 20 }}
+                href="#contact"
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                onClick={() => {
-                  setMobileOpen(false);
-                  hamburgerRef.current?.focus();
-                }}
-                className="text-2xl font-medium text-muted hover:text-gold transition-colors"
+                transition={{ delay: navLinks.length * 0.04 + 0.05 }}
+                onClick={() => setMobileOpen(false)}
+                className="mt-6 w-full max-w-sm text-center py-4 rounded-2xl bg-white text-[#050816] font-semibold hover:bg-white/90 transition-colors"
               >
-                {link.label}
+                Hablemos
               </motion.a>
-            ))}
+            </div>
+            <div className="p-6 border-t border-white/[0.06] text-center text-xs text-white/25">
+              Santiago, Chile · Remoto-first
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

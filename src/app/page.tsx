@@ -1,21 +1,17 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import DevSactum from "@/components/sections/DevSactum";
-import About from "@/components/sections/About";
-import Products from "@/components/sections/Products";
-import Services from "@/components/sections/Services";
-import Technology from "@/components/sections/Technology";
-import InnovationLab from "@/components/sections/InnovationLab";
+import Manifesto from "@/components/sections/Manifesto";
+import Process from "@/components/sections/Process";
+import TheLab from "@/components/sections/TheLab";
+import AISystems from "@/components/sections/AISystems";
+import ProjectsNew from "@/components/sections/ProjectsNew";
+import Experiments from "@/components/sections/Experiments";
 import Roadmap from "@/components/sections/Roadmap";
-import Careers from "@/components/sections/Careers";
-import Blog from "@/components/sections/Blog";
-import Changelog from "@/components/sections/Changelog";
-import Testimonials from "@/components/sections/Testimonials";
-import Partners from "@/components/sections/Partners";
-import Newsletter from "@/components/sections/Newsletter";
-import Contact from "@/components/sections/Contact";
-import Waitlist from "@/components/sections/Waitlist";
+import Stack from "@/components/sections/Stack";
+import OpenSource from "@/components/sections/OpenSource";
+import Chile from "@/components/sections/Chile";
+import FinalCTA from "@/components/sections/FinalCTA";
 import Preloader from "@/components/ui/Preloader";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import Chatbot from "@/components/ui/Chatbot";
@@ -25,23 +21,19 @@ export default function Home() {
     <>
       <Preloader />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
-        <DevSactum />
-        <About />
-        <Products />
-        <Services />
-        <Technology />
-        <InnovationLab />
+        <Manifesto />
+        <Process />
+        <TheLab />
+        <AISystems />
+        <ProjectsNew />
+        <Experiments />
         <Roadmap />
-        <Blog />
-        <Changelog />
-        <Waitlist standalone />
-        <Careers />
-        <Testimonials />
-        <Partners />
-        <Newsletter />
-        <Contact />
+        <Stack />
+        <OpenSource />
+        <Chile />
+        <FinalCTA />
       </main>
       <Footer />
       <ScrollToTop />
